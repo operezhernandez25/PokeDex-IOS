@@ -14,7 +14,7 @@ class DetailController: UIViewController {
     @IBOutlet weak var tableDetail: UITableView!
     @IBOutlet weak var tabViews: UITableView!
     @IBOutlet weak var segmentController: UISegmentedControl!
-    let segments = ["About","Base Stats","Moves","Game"]
+    let segments = ["About","Base Stats","Moves","Games"]
     
     //Variables declaration
     var url:String?
@@ -37,6 +37,8 @@ class DetailController: UIViewController {
         tabViews.isScrollEnabled = false
         tabViews.register(UINib(nibName: "AboutViewCell", bundle: nil), forCellReuseIdentifier: "AboutViewCell")
         tabViews.register(UINib(nibName: "StatsViewCell", bundle: nil), forCellReuseIdentifier: "StatsViewCell")
+        tabViews.register(UINib(nibName: "MovesViewCell", bundle: nil), forCellReuseIdentifier: "MovesViewCell")
+        tabViews.register(UINib(nibName: "GamesViewCell", bundle: nil), forCellReuseIdentifier: "GamesViewCell")
         
         
         //SegmentControl
@@ -91,10 +93,13 @@ extension DetailController: UITableViewDataSource,UITableViewDelegate{
         //This configuration is for both tables
         if tableView == tabViews && self.selectionTabIndex == 1{
             return self.listData[0].stats.count
+        }else if tableView == tabViews && self.selectionTabIndex == 2{
+            return self.listData[0].moves.count
+        }else if tableView == tabViews && self.selectionTabIndex == 3{
+            return self.listData[0].gameIndices.count
         } else if tableView == tabViews && self.selectionTabIndex == 0{
             return 1
-        }
-        else if tableView == tableDetail{
+        } else if tableView == tableDetail{
             return 1
         }else{
             return 0
@@ -113,6 +118,7 @@ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
             if pokemonDetail.count > 0{
                 cell?.pokemonPokedex = self.listData[0]
                 cell?.selectionStyle = .none
+                tabViews.isScrollEnabled = false
                 cell?.initializationInformation()
             }
         }
@@ -124,6 +130,7 @@ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
             if pokemonDetail.count > 0{
                 cell?.pokemonPokedex = self.listData[0]
                 cell?.selectionStyle = .none
+                tabViews.isScrollEnabled = false
                 cell?.initializationInformation()
             }
         }
@@ -135,7 +142,30 @@ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
             if pokemonDetail.count > 0{
                 cell?.selectionStyle = .none
                 cell?.stat = self.listData[0].stats[indexPath.row]
+                tabViews.isScrollEnabled = false
                 cell?.initializationInformation()
+            }
+        }
+        return cell!
+    }else if tableView == tabViews && selectionTabIndex == 2{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovesViewCell", for: indexPath) as? MovesViewCell
+        if let pokemonDetail = listData{
+            if pokemonDetail.count > 0{
+                cell?.selectionStyle = .none
+                cell?.moves = self.listData[0].moves[indexPath.row]
+                cell?.initializationInformation()
+                tabViews.isScrollEnabled = true
+            }
+        }
+        return cell!
+    }else if tableView == tabViews && selectionTabIndex == 3{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GamesViewCell", for: indexPath) as? GamesViewCell
+        if let pokemonDetail = listData{
+            if pokemonDetail.count > 0{
+                cell?.selectionStyle = .none
+                cell?.games = self.listData[0].gameIndices[indexPath.row]
+                cell?.initializationInformation()
+                tabViews.isScrollEnabled = true
             }
         }
         return cell!

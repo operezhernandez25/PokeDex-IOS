@@ -10,5 +10,4 @@ target 'PokeAPI' do
   pod 'Alamofire'
   pod 'DropDown'
   pod 'TagListView'
-  pod 'TabPageViewController'
 end

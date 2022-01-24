@@ -103,3 +103,37 @@ var colours = [
     "fairy": 0xD685AD,
 ]
 
+/// An image view that computes its intrinsic height from its width while preserving aspect ratio
+// Based on https://gist.github.com/marcc-orange/e309d86275e301466d1eecc8e400ad00
+public class DerivedHeightImageView: UIImageView {
+
+    public override var intrinsicContentSize: CGSize {
+        previousLayoutWidth = bounds.width
+
+        guard let image = self.image else {
+            return super.intrinsicContentSize
+        }
+
+        return CGSize(
+            width: bounds.width,
+            height: bounds.width / image.size.aspectRatio
+        )
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        if previousLayoutWidth != bounds.width {
+            invalidateIntrinsicContentSize()
+        }
+    }
+
+    // Track the width that the intrinsic size was computed for,
+    // to invalidate the intrinsic size when needed
+    private var previousLayoutWidth: CGFloat = 0
+}
+
+extension CGSize {
+    public var aspectRatio: CGFloat {
+        return width / height
+    }
+}

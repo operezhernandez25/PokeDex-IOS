@@ -57,7 +57,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Crw-3T-trm" secondAttribute="trailing" constant="32" id="7eu-In-TPI"/>
                                     <constraint firstAttribute="trailing" secondItem="2WS-il-eUl" secondAttribute="trailing" id="9Ml-U2-4cg"/>
                                     <constraint firstItem="vnl-e2-0dg" firstAttribute="top" secondItem="kUP-0C-SqM" secondAttribute="bottom" constant="3" id="9te-vf-u3A"/>
-                                    <constraint firstItem="Crw-3T-trm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dhp-rX-S8k" secondAttribute="leading" symbolic="YES" id="Aef-iR-bL9"/>
+                                    <constraint firstItem="Crw-3T-trm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dhp-rX-S8k" secondAttribute="leading" constant="20" symbolic="YES" id="Aef-iR-bL9"/>
                                     <constraint firstItem="2WS-il-eUl" firstAttribute="top" secondItem="Crw-3T-trm" secondAttribute="bottom" constant="15" id="GnS-yH-jvZ"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vnl-e2-0dg" secondAttribute="trailing" constant="20" symbolic="YES" id="HTJ-ia-hg1"/>
                                     <constraint firstItem="kUP-0C-SqM" firstAttribute="leading" secondItem="dhp-rX-S8k" secondAttribute="leading" constant="22" id="Y9J-10-yYa"/>
@@ -101,48 +101,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZhZ-Wg-cD7">
-                                <rect key="frame" x="0.0" y="88" width="428" height="194"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-rm-Cbc">
-                                <rect key="frame" x="0.0" y="282" width="428" height="32"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" red="0.83461318866288658" green="0.35771125910695534" blue="0.085524926803272089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="segmentValucChange:" destination="tet-fa-HC8" eventType="valueChanged" id="NXC-ak-7jn"/>
-                                </connections>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v05-j8-Tra">
-                                <rect key="frame" x="0.0" y="313" width="428" height="613"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="613" id="Ysg-zp-GLg"/>
-                                </constraints>
-                                <color key="separatorColor" red="0.72539927110000002" green="0.31090269139999999" blue="0.074333500129999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pc8-Ii-n08">
+                                <rect key="frame" x="0.0" y="88" width="428" height="838"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZhZ-Wg-cD7">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="194"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="194" id="JHo-1Z-X8H"/>
+                                        </constraints>
+                                    </tableView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-rm-Cbc">
+                                        <rect key="frame" x="0.0" y="194" width="428" height="32"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" red="0.83461318866288658" green="0.35771125910695534" blue="0.085524926803272089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="segmentValucChange:" destination="tet-fa-HC8" eventType="valueChanged" id="NXC-ak-7jn"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v05-j8-Tra">
+                                        <rect key="frame" x="0.0" y="225" width="428" height="613"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="separatorColor" red="0.72539927110000002" green="0.31090269139999999" blue="0.074333500129999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lIf-Ux-hDC"/>
                         <color key="backgroundColor" red="0.70980393890000004" green="0.36078432199999999" blue="0.1725490093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="OpM-rm-Cbc" firstAttribute="top" secondItem="ZhZ-Wg-cD7" secondAttribute="bottom" id="2Dv-aM-mhW"/>
-                            <constraint firstItem="OpM-rm-Cbc" firstAttribute="leading" secondItem="lIf-Ux-hDC" secondAttribute="leading" id="4Km-eb-se2"/>
-                            <constraint firstItem="OpM-rm-Cbc" firstAttribute="top" secondItem="ZhZ-Wg-cD7" secondAttribute="bottom" id="A8z-C6-595"/>
-                            <constraint firstItem="OpM-rm-Cbc" firstAttribute="leading" secondItem="lIf-Ux-hDC" secondAttribute="leading" id="CPc-ib-6Ob"/>
-                            <constraint firstItem="OpM-rm-Cbc" firstAttribute="top" secondItem="ZhZ-Wg-cD7" secondAttribute="bottom" id="Jbe-zv-O3I"/>
-                            <constraint firstItem="ZhZ-Wg-cD7" firstAttribute="trailing" secondItem="lIf-Ux-hDC" secondAttribute="trailing" id="Kua-C6-JwL"/>
-                            <constraint firstItem="v05-j8-Tra" firstAttribute="leading" secondItem="OpM-rm-Cbc" secondAttribute="leading" id="MaC-lg-TUj"/>
-                            <constraint firstAttribute="bottom" secondItem="v05-j8-Tra" secondAttribute="bottom" id="N6J-t9-eOR"/>
-                            <constraint firstItem="v05-j8-Tra" firstAttribute="top" secondItem="OpM-rm-Cbc" secondAttribute="bottom" id="Ri6-d6-bni"/>
-                            <constraint firstItem="ZhZ-Wg-cD7" firstAttribute="leading" secondItem="lIf-Ux-hDC" secondAttribute="leading" id="WNs-D7-7L9"/>
-                            <constraint firstItem="v05-j8-Tra" firstAttribute="top" secondItem="OpM-rm-Cbc" secondAttribute="bottom" id="ZuN-r2-o7E"/>
-                            <constraint firstItem="OpM-rm-Cbc" firstAttribute="trailing" secondItem="lIf-Ux-hDC" secondAttribute="trailing" id="b9x-4P-BGd"/>
-                            <constraint firstItem="OpM-rm-Cbc" firstAttribute="trailing" secondItem="lIf-Ux-hDC" secondAttribute="trailing" id="fZw-I7-EcK"/>
-                            <constraint firstItem="v05-j8-Tra" firstAttribute="trailing" secondItem="OpM-rm-Cbc" secondAttribute="trailing" id="hbO-h7-2Nf"/>
-                            <constraint firstItem="ZhZ-Wg-cD7" firstAttribute="top" secondItem="lIf-Ux-hDC" secondAttribute="top" id="rh6-J3-Psg"/>
+                            <constraint firstItem="Pc8-Ii-n08" firstAttribute="top" secondItem="lIf-Ux-hDC" secondAttribute="top" id="2dk-MM-FoH"/>
+                            <constraint firstItem="Pc8-Ii-n08" firstAttribute="leading" secondItem="lIf-Ux-hDC" secondAttribute="leading" id="6eD-j7-QXQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Pc8-Ii-n08" secondAttribute="bottom" id="F72-1V-Ubs"/>
+                            <constraint firstItem="Pc8-Ii-n08" firstAttribute="trailing" secondItem="lIf-Ux-hDC" secondAttribute="trailing" id="J4x-Xh-ZBA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s6f-CI-kHJ"/>

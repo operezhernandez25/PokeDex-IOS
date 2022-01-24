@@ -1,5 +1,5 @@
 //
-//  MovesViewCell.swift
+//  GamesViewCell.swift
 //  PokeAPI
 //
 //  Created by Oscar Perez on 1/23/22.
@@ -7,24 +7,26 @@
 
 import UIKit
 
-class MovesViewCell: UITableViewCell {
-    @IBOutlet weak var movimientoTxt: UILabel!
-    var moves:Move?
+class GamesViewCell: UITableViewCell {
+
+    @IBOutlet weak var gamesTxt: UILabel!
+    @IBOutlet weak var view: UIView!
+    var games:GameIndex?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        view.layer.cornerRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
 }
 
-extension MovesViewCell{
+extension GamesViewCell{
     func initializationInformation(){
-        movimientoTxt.text = moves!.move.name.capitalizingFirstLetter()
+        gamesTxt.text = String(games!.gameIndex) + " - " + games!.version.name.capitalizingFirstLetter()
     }
 }
