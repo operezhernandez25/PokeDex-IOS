@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="KGk-i7-Jjw" customClass="HeaderDetail" customModule="PokeAPI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="459" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="459" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POKEMONNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRc-VO-03d">
+                        <rect key="frame" x="208" y="19" width="167" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7A-DU-JZw">
+                        <rect key="frame" x="10" y="8" width="190" height="125"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYc-jU-Xcs">
+                        <rect key="frame" x="362" y="48" width="76" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cg-sH-VrN" customClass="TagListView" customModule="TagListView">
+                        <rect key="frame" x="208" y="87" width="167" height="35"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                <color key="value" red="0.70980393890000004" green="0.36078432199999999" blue="0.1725490093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="m7A-DU-JZw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3RW-bO-Pq6"/>
+                    <constraint firstItem="WYc-jU-Xcs" firstAttribute="leading" secondItem="m7A-DU-JZw" secondAttribute="trailing" constant="162" id="6dM-9O-Irf"/>
+                    <constraint firstAttribute="bottom" secondItem="WYc-jU-Xcs" secondAttribute="bottom" constant="81" id="JdP-S3-Out"/>
+                    <constraint firstItem="fRc-VO-03d" firstAttribute="leading" secondItem="m7A-DU-JZw" secondAttribute="trailing" constant="8" symbolic="YES" id="ce6-el-RRI"/>
+                    <constraint firstAttribute="trailing" secondItem="fRc-VO-03d" secondAttribute="trailing" constant="84" id="evI-6g-y2Z"/>
+                    <constraint firstAttribute="trailing" secondItem="WYc-jU-Xcs" secondAttribute="trailing" constant="21" id="gXC-QJ-LwW"/>
+                    <constraint firstItem="m7A-DU-JZw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="jpD-JP-4QY"/>
+                    <constraint firstItem="WYc-jU-Xcs" firstAttribute="top" secondItem="fRc-VO-03d" secondAttribute="bottom" constant="2" id="lsJ-1H-klw"/>
+                    <constraint firstAttribute="bottom" secondItem="m7A-DU-JZw" secondAttribute="bottom" constant="17" id="nQT-zx-mEw"/>
+                    <constraint firstItem="fRc-VO-03d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="rSX-s2-hSg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imagePokemon" destination="m7A-DU-JZw" id="xwU-sX-Ra1"/>
+                <outlet property="pokeDexNumber" destination="WYc-jU-Xcs" id="4WT-51-PCP"/>
+                <outlet property="pokemonName" destination="fRc-VO-03d" id="ess-74-fqN"/>
+                <outlet property="typesTagList" destination="6cg-sH-VrN" id="ISa-ea-7mV"/>
+            </connections>
+            <point key="canvasLocation" x="238.40579710144928" y="109.15178571428571"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="6cg-sH-VrN">
+            <size key="intrinsicContentSize" width="167" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

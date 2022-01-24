@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.5.0)
+  - DropDown (2.3.13)
+  - ProgressHUD (13.6)
+  - TabPageViewController (0.2.8)
+  - TagListView (1.4.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - DropDown
+  - ProgressHUD
+  - TabPageViewController
+  - TagListView
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DropDown
+    - ProgressHUD
+    - TabPageViewController
+    - TagListView
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  TabPageViewController: 8bd4104909754416b35a98f3b72a5b674ab20dd5
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
+
+PODFILE CHECKSUM: 02ae04c39792284774494b6854072cc886021c21
+
+COCOAPODS: 1.11.2
